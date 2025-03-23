@@ -2,46 +2,159 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>企业保障金缴纳信息</title>
     <style>
-        table { border-collapse: collapse; margin: 20px 0; }
-        th, td { border: 1px solid #ddd; padding: 8px 12px; }
-        h3 { color: #666; margin: 5px 0; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        }
+
+        .main-title {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .sub-title {
+            font-size: 20px;
+            color: #444;
+            margin: 20px 0 15px;
+            border-left: 4px solid #1890ff;
+            padding-left: 10px;
+        }
+
+        .table-info {
+            width: 100%;
+            border: 2px solid #e8e8e8;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .table-info td {
+            padding: 12px 20px;
+            border: 1px solid #e8e8e8;
+            font-size: 14px;
+        }
+
+        .table-info td:first-child {
+            width: 35%;
+            background: #fafafa;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .create-date {
+            color: #999;
+            font-size: 12px;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .penalty-section {
+            margin: 25px 0;
+            padding: 15px;
+            border: 1px dashed #ff4d4f;
+        }
+
+        .penalty-title {
+            color: #ff4d4f;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .notice-list {
+            counter-reset: notice;
+            padding-left: 25px;
+        }
+
+        .notice-list li {
+            position: relative;
+            margin: 8px 0;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .notice-list li::before {
+            content: counter(notice) ".";
+            counter-increment: notice;
+            position: absolute;
+            left: -25px;
+            color: #1890ff;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .table-info td {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+        }
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
-<h1>中国南海工程有限公司保证金免缴</h1>
-<h2>企业保障金缴纳比例查询</h2>
-<h3>制表日期：2024-08-29 16:41:39</h3>
+<div class="container">
+    <h1 class="main-title">中国南海工程有限公司保证金免缴</h1>
 
-<table>
-    <tbody>
-    <tr>
-        <td><strong>企业名称</strong></td>
-        <td>中国南海工程有限公司</td>
-    </tr>
-    <tr>
-        <td><strong>统一社会信用代码</strong></td>
-        <td>91440300192196473K</td>
-    </tr>
-    <tr>
-        <td><strong>保障金缴纳比例</strong></td>
-        <td>0%</td>
-    </tr>
-    <tr>
-        <td><strong>认定时间</strong></td>
-        <td>2024-05-27</td>
-    </tr>
-    </tbody>
-</table>
+    <div class="sub-title">企业保障金缴纳比例查询</div>
+    <div class="create-date">制表日期：2024-08-29 16:41:39</div>
 
-<h3>最近一次处罚信息</h3>
+    <table class="table-info">
+        <tbody>
+        <tr>
+            <td>企业名称</td>
+            <td>中国南海工程有限公司</td>
+            <td rowspan="4"><img src="security_fund_.png" alt="扫码访问" class="responsive-image">
+            </td>
+        </tr>
+        <tr>
+            <td>统一社会信用代码</td>
+            <td>91440300192196473K</td>
+        </tr>
+        <tr>
+            <td>保障金缴纳比例</td>
+            <td>0%</td>
+        </tr>
+        <tr>
+            <td>认定时间</td>
+            <td>2024-05-27</td>
+        </tr>
+        </tbody>
 
-<div class="notice">
-    <ol>
+    </table>
+
+    <div class="penalty-section">
+        <div class="penalty-title">最近一次处罚信息</div>
+        <!-- 此处留空保持与图片一致 -->
+    </div>
+
+    <div class="notice-list">
+        <div class="sub-title" style="border:none; padding:0">说明：</div>
         <li>展示的信息是通过当前法人账号对应的统一社会信用代码获取；如不显示可能是信息未匹配上；</li>
         <li>信息不显示或者内容有疑议，可联系合肥市市场处维权科。</li>
-    </ol>
+    </div>
 </div>
 </body>
 </html>
